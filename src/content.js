@@ -54,12 +54,43 @@ const updateStats = (store) => {
   stats && store.dispatch(setStats(stats));
 };
 
+// No advertising:
+const removeAdv = () => {
+  const conds = [
+    // Яндекс.Почта:
+    // 'div[data-key="view=ewmslep"]',
+    '.mail-DirectLineContainer',
+
+    '.ns-view-left-box > div:nth-child(7)',
+    '.ns-view-left-box > div:nth-child(8)'
+  ];
+  for (const cond of conds) {
+    const elm = document.querySelector(cond);
+    if (!!elm) {
+      elm.style.transition = "all 0.3s linear";
+      elm.style.border = "1px dashed red";
+      elm.style.opacity = 0.5;
+      elm.style['background-color'] = "rgba(255,0,0,0.25)";
+      setTimeout(() => {
+        elm.style.display = "none";
+      }, 3000)
+    }
+  }
+}
+
 (async () => {
   chrome.runtime.onMessage.addListener( data => {
     // if current tab received focus, apply mark/unmark operations (if any),
     // then, if there was no mark operation, update marker stats
-    data && data.id === 'tabFocusPass' &&
-    !render(store) && updateStats(store);
+    switch (true) {
+      case (data && data.id === 'tabFocused'):
+        !render(store) && updateStats(store);
+
+        // No advertising:
+        setTimeout(removeAdv, 5000)
+        break;
+      default: break;
+    }
   });
 
   const store = await storeCreatorFactory({createStore})(reducers);

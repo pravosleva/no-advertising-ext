@@ -20,17 +20,9 @@
       "https://*.yandex.ru/*"
     ]
   }],
-  "icons": {
-    "16": "icon-filled-16.png",
-    "32": "icon-filled-32.png",
-    "64": "icon-filled-64.png",
-    "128": "icon-filled-128.png"
-  },
+  "icons": {},
   "browser_action": {
-    "default_icon": {
-      "16": "icon-outlined-16.png",
-      "32": "icon-outlined-32.png"
-    },
+    "default_icon": {},
     "default_title": "Keyword Marker",
     "default_popup": "popup.html"
   },

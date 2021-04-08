@@ -58,21 +58,7 @@ chrome.tabs.onActivated.addListener(async data => {
   // reset marker stats:
   store.dispatch(setStats(false));
   // pass focus to active tab:
-  chrome.tabs.sendMessage(tabId, {id: 'tabFocusPass'});
-
-  // No advertising:
-  const removeAdv = () => {
-    const conds = [
-      // Яндекс.Почта:
-      // 'div[data-key="view=ewmslep"]',
-      '.ns-view-left-box > div:nth-child(8)'
-    ];
-    for (const cond of conds) {
-      const elm = document.querySelector(cond);
-      if (!!elm) elm.style.display = "none";
-    }
-  }
-  setTimeout(removeAdv, 5000)
+  chrome.tabs.sendMessage(tabId, {id: 'tabFocused'});
 });
 
 (async () => {

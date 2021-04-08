@@ -1,3 +1,9 @@
+# Убрать реклаиу из Яндекс.Почта
+
+![gif](./demo/2021-04-08-12-29.gif)
+
+> Дописано на основе [этого репозитория](https://github.com/hindmost/cra-rich-chrome-ext-example)
+
 # cra-rich-chrome-ext-example
 
 An example of full-fledged, rich UI Chrome extension built with Create React App and Redux.
