@@ -14,8 +14,9 @@
     "semantic-ui-css": "^2.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-app-rewired build",
+    "build:chrome": "yarn build && zip ./release/no-adv.xpi ./build/* ./build/*/** ./build/*/**/*",
+    "start": "react-scripts start",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },

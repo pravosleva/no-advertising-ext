@@ -13,8 +13,11 @@
   "content_scripts": [{
     "js": [ "static/js/content.js" ],
     "matches": [
-      "https://stackoverflow.com/*", "https://*.stackoverflow.com/*",
-      "https://*.stackexchange.com/*"
+      "https://stackoverflow.com/*",
+      "https://*.stackoverflow.com/*",
+      "https://*.stackexchange.com/*",
+      "https://yandex.ru/*",
+      "https://*.yandex.ru/*"
     ]
   }],
   "icons": {
